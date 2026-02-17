@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <meta charset="UTF-8">
+     <title></title>
+     
+     <style>
+    
+     
+    .next-btn {
+  
+  font-size: 20px;
+  
+  border: none;
+display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid gray;
+  border-right: 2px solid gray;
+  transform: rotate(45deg);
+  margin-left: 8px;
+   
+  
+  
+}
+
+.wrapper-btn{
+    
+    padding: 50px 20px;
+  font-size: 8px;;
+}
+
+
+.image{
+    width:200px;
+    background: ;
+}
+.mainCon{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    gap:20px;
+    height:100vh;
+    transition: background 0.6s ease;
+}
+.btn{
+    
+    width: 160px;
+    height: 40px;
+    background:#003B83;
+    border: none;
+    border-radius: 3% 8% 7%;
+    color: #E7FFD0;
+    font-family: fantasy;
+    font-size: 15px;
+    font-weight: bold;
+    
+    
+    
+    
+    
+}
+body{
+    background: red;
+}
+.start-btn{
+    
+    background:linear-gradient(250deg,#141D3E,#00E4FF,#80FF00);
+    animation:movingb 8s linear infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes movingb {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  
+
+     </style>
+     </head>
+  <body>
+      <div class="mainCon start-btn">
+          <button  class="btn"onclick="changeImage()">start</button>
+      </div>
+      
+      
+      
+      
+      
+      <script type="text/javascript" charset="utf-8">
+          function changeImage(){
+        const mainCon = document.querySelector(".mainCon");
+mainCon.classList.remove("start-btn");
+mainCon.classList.add("change-bg");        
+        
+            const random =  Math.floor(Math.random() * 5);
+
+  mainCon.innerHTML =` <img class="hidden image" src="img${random}.jpg" alt="" />
+  
+  <div class = "wrapper-btn">
+  <span class="next-btn" onclick="changeImage()"></span>       </div>  `;
+          }
+      </script>
+</body>
+</html>
